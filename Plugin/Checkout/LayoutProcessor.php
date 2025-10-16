@@ -17,7 +17,6 @@ class LayoutProcessor
             return $jsLayout;
         }
 
-        // Shortcuts
         $components =& $jsLayout['components']['checkout']['children']['steps']['children']
             ['shipping-step']['children']['shippingAddress']['children'];
 
