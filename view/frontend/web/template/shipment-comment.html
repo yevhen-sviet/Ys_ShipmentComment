@@ -1,0 +1,20 @@
+<div class="fieldset ys-shipment-comment" data-bind="visible: isVisible">
+  <div class="field" data-bind="css: {'_error': errorMessage}">
+    <label class="label" for="ys-shipment-comment">
+      <span data-bind="i18n: 'Shipment comment'"></span>
+      <span class="required" data-bind="visible: isRequired">*</span>
+    </label>
+    <div class="control">
+      <textarea id="ys-shipment-comment"
+                class="input-text"
+                data-bind="
+                  value: value,
+                  attr: { placeholder: $t('Any delivery instructions or notes?'), 'aria-required': isRequired },
+                  css: { 'mage-error': errorMessage },
+                  event: { blur: validate.bind($data) }
+                "></textarea>
+      <div class="mage-error" generated="true"
+           data-bind="text: errorMessage, visible: errorMessage"></div>
+    </div>
+  </div>
+</div>

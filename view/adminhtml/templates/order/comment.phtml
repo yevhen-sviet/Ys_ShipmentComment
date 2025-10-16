@@ -1,0 +1,11 @@
+<?php /** @var $block \Magento\Framework\View\Element\Template */ ?>
+<?php $order = $block->getParentBlock()->getOrder(); ?>
+<?php $comment = (string)$order->getData('shipment_comment'); ?>
+<?php if ($comment): ?>
+<section class="box-information">
+  <div class="box-title"><strong><?= $block->escapeHtml(__('Shipment Comment')) ?></strong></div>
+  <div class="box-content">
+    <p><?= nl2br($block->escapeHtml($comment)) ?></p>
+  </div>
+</section>
+<?php endif; ?>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <section id="shipping">
+      <group id="ys_shipmentcomment" translate="label" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Shipment Comment</label>
+
+        <field id="enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Enable Shipment Comment</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <config_path>shipping/ys_shipmentcomment/enabled</config_path>
+        </field>
+
+        <field id="checkout_css" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Checkout CSS</label>
+          <comment>Styles injected on the checkout page only.</comment>
+          <config_path>shipping/ys_shipmentcomment/checkout_css</config_path>
+        </field>
+
+        <field id="account_css" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Customer Account CSS</label>
+          <comment>Styles injected on the customer order view page only.</comment>
+          <config_path>shipping/ys_shipmentcomment/account_css</config_path>
+        </field>
+
+        <field id="require_enabled" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Require Shipment Comment</label>
+          <comment>
+            If "Yes", the comment is required for the selected methods.
+            If "No", the comment is optional for the selected methods.
+            For methods not selected, the field is hidden.
+          </comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <config_path>shipping/ys_shipmentcomment/require_enabled</config_path>
+        </field>
+
+        <field id="required_methods" type="multiselect" sortOrder="40"
+               showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Selected Methods</label>
+          <comment>Select carrier/method codes for which the Shipment Comment field will be shown (and possibly required).</comment>
+          <source_model>Ys\ShipmentComment\Model\Config\Source\ShippingMethods</source_model>
+          <config_path>shipping/ys_shipmentcomment/required_methods</config_path>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>

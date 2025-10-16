@@ -1,0 +1,21 @@
+type Cart {
+  shipment_comment: String @resolver(class: "Ys\\ShipmentComment\\Model\\Resolver\\CartShipmentComment")
+}
+
+type CustomerOrder {
+  shipment_comment: String @resolver(class: "Ys\\ShipmentComment\\Model\\Resolver\\OrderShipmentComment")
+}
+
+input SetShipmentCommentOnCartInput {
+  cart_id: String!
+  shipment_comment: String!
+}
+
+type SetShipmentCommentOnCartOutput {
+  cart: Cart
+}
+
+type Mutation {
+  setShipmentCommentOnCart(input: SetShipmentCommentOnCartInput!): SetShipmentCommentOnCartOutput
+    @resolver(class: "Ys\\ShipmentComment\\Model\\Resolver\\SetShipmentCommentOnCart")
+}
