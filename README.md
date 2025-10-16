@@ -93,3 +93,27 @@ Both pages support inline styling via the CSS config values.
 
 Plugin on Magento\Sales\Model\Order\Email\SenderBuilder adds
 {{var shipment_comment}} so that it can be used in email templates.
+
+
+GraphQL Support:
+The module exposes a read and write API for headless stores.
+
+Query example
+{
+  cart(cart_id: "abcdef123456") {
+    shipment_comment
+  }
+}
+
+Mutation example
+mutation {
+  setShipmentCommentOnCart(
+    input: { cart_id: "abcdef123456", shipment_comment: "Please deliver before 5 PM." }
+  ) {
+    cart {
+      shipment_comment
+    }
+  }
+}
+
+Resolvers handle both read (CartShipmentComment, OrderShipmentComment) and write (SetShipmentCommentOnCart).
