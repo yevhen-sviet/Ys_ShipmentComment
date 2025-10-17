@@ -11,11 +11,11 @@
         </arguments>
       </block>
     </referenceContainer>
-    <referenceBlock name="sales.order.info">
-      <block class="Magento\Framework\View\Element\Template"
+    <referenceContainer name="content">
+      <block class="Ys\ShipmentComment\Block\Order\Comment"
              name="ys.shipmentcomment.account.info"
              template="Ys_ShipmentComment::order/comment_front.phtml"
-             after="-"/>
-    </referenceBlock>
+             after="sales.order.view"/>
+    </referenceContainer>
   </body>
 </page>
