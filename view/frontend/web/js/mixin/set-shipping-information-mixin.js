@@ -8,10 +8,8 @@ define([
 ], function ($, quote, ko) {
     'use strict';
 
-    // a simple shared observable for comment field
     var sharedValue = ko.observable('');
 
-    // expose setter so the component can update it
     return function (originalAction) {
         var wrapped = function (payload) {
             payload = payload || {};
