@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Model\Resolver;
@@ -22,8 +26,8 @@ class SetShipmentCommentOnCart implements ResolverInterface
         $field,
         $context,
         ResolveInfo $info,
-        ?array $value = null,   // ✅ explicitly nullable
-        ?array $args = null     // ✅ explicitly nullable
+        ?array $value = null,
+        ?array $args = null
     ) {
         if (!$this->config->isEnabled()) {
             throw new LocalizedException(__('Shipment comment feature is disabled.'));

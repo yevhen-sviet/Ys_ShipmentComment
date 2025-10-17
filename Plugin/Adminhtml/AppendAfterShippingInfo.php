@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Plugin\Adminhtml;
@@ -10,7 +14,6 @@ class AppendAfterShippingInfo
 {
     public function afterToHtml(AbstractOrderBlock $subject, string $result): string
     {
-        // Only for the Shipping & Handling block
         $isShippingBlockByName = ($subject->getNameInLayout() === 'order_shipping_view');
         $isShippingBlockByTpl  = ($subject->getTemplate() === 'Magento_Shipping::order/view/info.phtml');
 

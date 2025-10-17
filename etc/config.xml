@@ -1,15 +1,20 @@
+<!-- 
+/**
+ * Created by Yevhen Sviet
+ */  
+ -->
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
-  <default>
-    <shipping>
-      <ys_shipmentcomment>
-        <enabled>1</enabled>
-        <checkout_css></checkout_css>
-        <account_css></account_css>
-        <require_enabled>0</require_enabled>
-        <required_methods></required_methods>
-      </ys_shipmentcomment>
-    </shipping>
-  </default>
+  xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <shipping>
+            <ys_shipmentcomment>
+                <enabled>1</enabled>
+                <checkout_css></checkout_css>
+                <account_css></account_css>
+                <require_enabled>0</require_enabled>
+                <required_methods></required_methods>
+            </ys_shipmentcomment>
+        </shipping>
+    </default>
 </config>

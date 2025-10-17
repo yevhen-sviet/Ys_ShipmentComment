@@ -1,6 +1,11 @@
-<?php /** @var $block \Ys\ShipmentComment\Block\Css */ ?>
+<?php 
+/**
+ * Created by Yevhen Sviet
+ */ 
+
+/** @var $block \Ys\ShipmentComment\Block\Css */ ?>
 <?php $css = trim($block->getCssByPath()); if ($css !== ''): ?>
-<style type="text/css">
-<?= $css ?>
-</style>
+    <style type="text/css">
+        <?= $css ?>
+    </style>
 <?php endif; ?>

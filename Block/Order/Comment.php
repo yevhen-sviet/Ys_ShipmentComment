@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */  
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Block\Order;
@@ -18,8 +22,7 @@ class Comment extends Template
     }
 
     /**
-     * Returns the current order if available.
-     * Priority: explicit data → parent block → registry('current_order')
+     * Returns the current order if available
      */
     public function getOrder(): ?OrderInterface
     {
@@ -39,7 +42,7 @@ class Comment extends Template
     }
 
     /**
-     * Returns the shipment comment text (or empty string).
+     * Returns the shipment comment text (or empty string)
      */
     public function getComment(): string
     {

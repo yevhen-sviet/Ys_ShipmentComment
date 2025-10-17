@@ -1,8 +1,13 @@
+<!-- 
+/**
+ * Created by Yevhen Sviet
+ */
+ -->
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-  <type name="Magento\Sales\Block\Adminhtml\Order\AbstractOrder">
-    <plugin name="ys_shipmentcomment_append_after_shipping_info"
-            type="Ys\ShipmentComment\Plugin\Adminhtml\AppendAfterShippingInfo"/>
-  </type>
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sales\Block\Adminhtml\Order\AbstractOrder">
+        <plugin name="ys_shipmentcomment_append_after_shipping_info"
+          type="Ys\ShipmentComment\Plugin\Adminhtml\AppendAfterShippingInfo"/>
+    </type>
 </config>

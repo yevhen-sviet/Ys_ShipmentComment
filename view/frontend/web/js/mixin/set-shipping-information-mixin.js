@@ -1,3 +1,6 @@
+/**
+ * Created by Yevhen Sviet
+ */
 define([
     'jquery',
     'Magento_Checkout/js/model/quote',
