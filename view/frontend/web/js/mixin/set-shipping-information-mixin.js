@@ -21,7 +21,7 @@ define([
         wrapped.setShipmentComment = function (val) { 
             sharedValue(val); 
         };
-        
+
         return wrapped;
     };
 });

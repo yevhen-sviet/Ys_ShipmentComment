@@ -4,4 +4,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attribute
     <extension_attributes for="Magento\Checkout\Api\Data\ShippingInformationInterface">
         <attribute code="shipment_comment" type="string"/>
     </extension_attributes>
+    <extension_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="shipment_comment" type="string"/>
+    </extension_attributes>
 </config>
