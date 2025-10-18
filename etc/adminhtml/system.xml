@@ -29,7 +29,7 @@
                     <config_path>shipping/ys_shipmentcomment/account_css</config_path>
                 </field>
 
-                <field id="require_enabled" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="require_enabled" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Require Shipment Comment</label>
                     <comment>
                         If "Yes", the comment is required for the selected methods.
@@ -40,7 +40,7 @@
                     <config_path>shipping/ys_shipmentcomment/require_enabled</config_path>
                 </field>
 
-                <field id="required_methods" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="required_methods" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Selected Methods</label>
                     <comment>
                         Select carrier/method codes for which the Shipment Comment field will be shown (and possibly required).

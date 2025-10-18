@@ -31,7 +31,7 @@ class OrderRepositoryLoadExtensionAttributes
     private function hydrateExtensionAttribute(OrderInterface $order): void
     {
         $comment = (string)$order->getData('shipment_comment');
-        $$attributes = $order->getExtensionAttributes();
+        $attributes = $order->getExtensionAttributes();
         if ($attributes === null) {
             $attributes = $this->orderExtensionFactory->create();
         }
