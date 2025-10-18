@@ -12,6 +12,16 @@ use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 
 class CartShipmentComment implements ResolverInterface
 {
+    /*
+    * Resolver to get shipment comment from cart
+    *
+    * @param mixed $field
+    * @param mixed $context
+    * @param ResolveInfo $info
+    * @param array|null $value
+    * @param array|null $args
+    * @return string|null
+    */
     public function resolve(
         $field,
         $context,

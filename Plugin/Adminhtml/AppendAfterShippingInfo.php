@@ -12,6 +12,14 @@ use Ys\ShipmentComment\Block\Adminhtml\Order\Comment as CommentBlock;
 
 class AppendAfterShippingInfo
 {
+    /**
+     * After plugin for toHtml method to append shipment comment after shipping information
+     *
+     * @param AbstractOrderBlock $subject
+     * @param string $result
+     * @return string
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function afterToHtml(AbstractOrderBlock $subject, string $result): string
     {
         $isShippingBlockByName = ($subject->getNameInLayout() === 'order_shipping_view');

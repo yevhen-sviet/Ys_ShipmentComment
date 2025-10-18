@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Plugin\Sales;
@@ -10,14 +14,38 @@ use Magento\Sales\Api\Data\OrderExtensionFactory;
 
 class OrderRepositoryLoadExtensionAttributes
 {
+    /**
+    * Constructor
+    *
+    * @param OrderExtensionFactory $orderExtensionFactory
+    */
     public function __construct(private OrderExtensionFactory $orderExtensionFactory) {}
 
-    public function afterGet(OrderRepositoryInterface $subject, OrderInterface $order): OrderInterface
+    /*
+    * After plugin for get method
+    *
+    * @param OrderRepositoryInterface $subject
+    * @param OrderInterface $order
+    * @return OrderInterface
+    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+    */
+    public function afterGet(
+        OrderRepositoryInterface $subject, 
+        OrderInterface $order
+        ): OrderInterface
     {
         $this->hydrateExtensionAttribute($order);
         return $order;
     }
 
+    /*
+    * After plugin for getList method
+    *
+    * @param OrderRepositoryInterface $subject
+    * @param OrderSearchResultInterface $searchResult
+    * @return OrderSearchResultInterface
+    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+    */
     public function afterGetList(
         OrderRepositoryInterface $subject,
         OrderSearchResultInterface $searchResult
@@ -28,6 +56,12 @@ class OrderRepositoryLoadExtensionAttributes
         return $searchResult;
     }
 
+    /*
+    * Hydrates the shipment comment extension attribute for the given order
+    *
+    * @param OrderInterface $order
+    * @return void
+    */
     private function hydrateExtensionAttribute(OrderInterface $order): void
     {
         $comment = (string)$order->getData('shipment_comment');

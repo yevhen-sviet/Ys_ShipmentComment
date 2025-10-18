@@ -12,8 +12,18 @@ use Magento\Shipping\Model\Config as ShippingConfig;
 
 class ShippingMethods implements ArrayInterface
 {
+    /*
+    * Constructor
+    *
+    * @param ShippingConfig $shippingConfig
+    */
     public function __construct(private ShippingConfig $shippingConfig) {}
 
+    /*
+    * Returns an array of shipping methods for use in configuration
+    *
+    * @return array
+    */
     public function toOptionArray(): array
     {
         $options = [];

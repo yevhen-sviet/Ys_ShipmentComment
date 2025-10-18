@@ -12,8 +12,18 @@ use Ys\ShipmentComment\Model\Config;
 
 class ConfigProvider implements ConfigProviderInterface
 {
+    /**
+    * Constructor
+    *
+    * @param Config $config
+    */
     public function __construct(private Config $config) {}
 
+    /**
+     * Retrieves configuration settings for the checkout process
+     * 
+     * @return array
+     */
     public function getConfig(): array
     {
         return [

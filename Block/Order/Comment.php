@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Yevhen Sviet
- */  
+ */
 
 declare(strict_types=1);
 
@@ -13,6 +13,13 @@ use Magento\Sales\Api\Data\OrderInterface;
 
 class Comment extends Template
 {
+    /**
+     * Constructor
+     *
+     * @param Template\Context $context
+     * @param Registry $registry
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
         private Registry $registry,

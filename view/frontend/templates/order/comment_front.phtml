@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  * Created by Yevhen Sviet
- */ 
+ */
 
 /** @var $block \Ys\ShipmentComment\Block\Order\Comment */
 $comment = $block->getComment();
@@ -9,10 +9,10 @@ $comment = $block->getComment();
 <?php if ($comment !== ''): ?>
     <div class="block block-order-shipment-comment">
         <div class="block-title">
-            <strong><?= $block->escapeHtml(__('Shipment Comment')) ?></strong>
+            <strong><?= $escaper->escapeHtml(__('Shipment Comment')) ?></strong>
         </div>
         <div class="block-content">
-            <p><?= nl2br($block->escapeHtml($comment)) ?></p>
+            <p><?= nl2br($escaper->escapeHtml($comment)) ?></p>
         </div>
     </div>
 <?php endif; ?>

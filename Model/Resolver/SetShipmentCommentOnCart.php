@@ -16,12 +16,30 @@ use Ys\ShipmentComment\Model\Config;
 
 class SetShipmentCommentOnCart implements ResolverInterface
 {
+    /*
+    * Constructor
+    *
+    * @param GetCartForUser $getCartForUser
+    * @param CartRepositoryInterface $cartRepository
+    * @param Config $config
+    */
     public function __construct(
         private GetCartForUser $getCartForUser,
         private CartRepositoryInterface $cartRepository,
         private Config $config
     ) {}
 
+    /*
+    * Resolver to set shipment comment on cart
+    *
+    * @param mixed $field
+    * @param mixed $context
+    * @param ResolveInfo $info
+    * @param array|null $value
+    * @param array|null $args
+    * @return array
+    * @throws LocalizedException
+    */
     public function resolve(
         $field,
         $context,
