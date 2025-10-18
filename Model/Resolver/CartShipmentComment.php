@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Model\Resolver;
@@ -12,8 +16,8 @@ class CartShipmentComment implements ResolverInterface
         $field,
         $context,
         ResolveInfo $info,
-        ?array $value = null,   // ✅ explicitly nullable
-        ?array $args = null     // ✅ explicitly nullable
+        ?array $value = null,
+        ?array $args = null
     ) {
         if (!isset($value['model'])) return null;
         $quote = $value['model'];

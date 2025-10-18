@@ -66,3 +66,6 @@ mutation {
 }
 
 Resolvers handle both read (CartShipmentComment, OrderShipmentComment) and write (SetShipmentCommentOnCart).
+
+
+Tested on Magento Open Source v2.4.8-p2.

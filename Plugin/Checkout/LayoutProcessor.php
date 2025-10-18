@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Plugin\Checkout;
@@ -20,7 +24,6 @@ class LayoutProcessor
         $components =& $jsLayout['components']['checkout']['children']['steps']['children']
             ['shipping-step']['children']['shippingAddress']['children'];
 
-        // Ensure the shippingAdditional container exists and is a UI container
         if (!isset($components['shippingAdditional'])) {
             $components['shippingAdditional'] = [
                 'component'   => 'uiComponent',
@@ -28,13 +31,11 @@ class LayoutProcessor
                 'children'    => []
             ];
         } elseif (!isset($components['shippingAdditional']['component'])) {
-            // Harden existing array
             $components['shippingAdditional']['component'] = 'uiComponent';
             $components['shippingAdditional']['displayArea'] = 'shippingAdditional';
             $components['shippingAdditional']['children'] = $components['shippingAdditional']['children'] ?? [];
         }
 
-        // Inject node
         $components['shippingAdditional']['children']['ys-shipment-comment'] = [
             'component' => 'Ys_ShipmentComment/js/view/shipment-comment',
             'sortOrder' => 900,

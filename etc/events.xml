@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
+<!-- 
+/**
+ * Created by Yevhen Sviet
+ */
+ -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework/Event/etc/events.xsd">
-  <event name="sales_model_service_quote_submit_before">
-    <observer name="ys_shipmentcomment_copy_to_order" instance="Ys\ShipmentComment\Observer\CopyCommentToOrder"/>
-  </event>
+  xsi:noNamespaceSchemaLocation="urn:magento:framework/Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="ys_shipmentcomment_copy_to_order" instance="Ys\ShipmentComment\Observer\CopyCommentToOrder"/>
+    </event>
 </config>

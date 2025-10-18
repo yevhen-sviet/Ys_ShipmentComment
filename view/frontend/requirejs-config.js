@@ -1,3 +1,6 @@
+/**
+ * Created by Yevhen Sviet
+ */
 var config = {
     map: {
         '*': {

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by Yevhen Sviet
+ */  
+
 declare(strict_types=1);
 
 namespace Ys\ShipmentComment\Block\Order;
@@ -9,37 +13,19 @@ use Magento\Sales\Api\Data\OrderInterface;
 
 class Comment extends Template
 {
-    public function __construct(
-        Template\Context $context,
-        private Registry $registry,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-    }
+    public function __construct(private Registry $registry) {}
 
     /**
-     * Returns the current order if available.
-     * Priority: explicit data → parent block → registry('current_order')
+     * Returns the current order if available
      */
     public function getOrder(): ?OrderInterface
     {
-        if ($this->hasData('order')) {
-            $order = $this->getData('order');
-            return $order instanceof OrderInterface ? $order : null;
-        }
-
-        $parent = $this->getParentBlock();
-        if ($parent && method_exists($parent, 'getOrder')) {
-            $order = $parent->getOrder();
-            return $order instanceof OrderInterface ? $order : null;
-        }
-
         $order = $this->registry->registry('current_order');
         return $order instanceof OrderInterface ? $order : null;
     }
 
     /**
-     * Returns the shipment comment text (or empty string).
+     * Returns the shipment comment text
      */
     public function getComment(): string
     {

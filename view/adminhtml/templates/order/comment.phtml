@@ -1,17 +1,22 @@
-<?php /** @var $block \Ys\ShipmentComment\Block\Adminhtml\Order\Comment */ ?>
+<?php 
+/**
+ * Created by Yevhen Sviet
+ */ 
+
+/** @var $block \Ys\ShipmentComment\Block\Adminhtml\Order\Comment */ ?>
 <?php $comment = $block->getComment(); ?>
 <?php if ($comment !== ''): ?>
-<section class="box-information" style="float: right;
-    width: calc((100%) * 0.5 - 30px);
-    padding-top: 20px;">
-  <div class="box-title">
-    <strong><?= $block->escapeHtml(__('Shipment Comment:')) ?></strong>
-  </div>
-  <div class="box-content" style="border: 1px solid #ccc; 
-    padding: 10px; 
-    margin-top: 10px; 
-    background-color: #f9f9f9;">
-    <p><?= nl2br($block->escapeHtml($comment)) ?></p>
-  </div>
-</section>
+    <section class="box-information" style="float: right;
+      width: calc((100%) * 0.5 - 30px);
+      padding-top: 20px;">
+        <div class="box-title">
+            <strong><?= $block->escapeHtml(__('Shipment Comment:')) ?></strong>
+        </div>
+        <div class="box-content" style="border: 1px solid #ccc; 
+          padding: 10px; 
+          margin-top: 10px; 
+          background-color: #f9f9f9;">
+            <p><?= nl2br($block->escapeHtml($comment)) ?></p>
+        </div>
+    </section>
 <?php endif; ?>
