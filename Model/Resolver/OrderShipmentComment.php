@@ -12,16 +12,16 @@ use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 
 class OrderShipmentComment implements ResolverInterface
 {
-    /*
-    * Resolver to get shipment comment from order
-    *
-    * @param mixed $field
-    * @param mixed $context
-    * @param ResolveInfo $info
-    * @param array|null $value
-    * @param array|null $args
-    * @return string|null
-    */
+    /**
+     * Resolver to get shipment comment from order
+     *
+     * @param mixed $field
+     * @param mixed $context
+     * @param ResolveInfo $info
+     * @param array|null $value
+     * @param array|null $args
+     * @return string|null
+     */
     public function resolve(
         $field,
         $context,
@@ -29,7 +29,9 @@ class OrderShipmentComment implements ResolverInterface
         ?array $value = null,
         ?array $args = null
     ) {
-        if (!isset($value['model'])) return null;
+        if (!isset($value['model'])) {
+            return null;
+        }
         $order = $value['model'];
         return (string)$order->getData('shipment_comment');
     }

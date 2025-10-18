@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  * Created by Yevhen Sviet
- */ 
+ */
 
 /** @var $block \Ys\ShipmentComment\Block\Adminhtml\Order\Comment */ ?>
 <?php $comment = $block->getComment(); ?>
@@ -10,13 +10,13 @@
       width: calc((100%) * 0.5 - 30px);
       padding-top: 20px;">
         <div class="box-title">
-            <strong><?= $block->escapeHtml(__('Shipment Comment:')) ?></strong>
+            <strong><?= $escaper->escapeHtml(__('Shipment Comment:')) ?></strong>
         </div>
         <div class="box-content" style="border: 1px solid #ccc; 
           padding: 10px; 
           margin-top: 10px; 
           background-color: #f9f9f9;">
-            <p><?= nl2br($block->escapeHtml($comment)) ?></p>
+            <p><?= $escaper->escapeHtml($comment) ?></p>
         </div>
     </section>
 <?php endif; ?>

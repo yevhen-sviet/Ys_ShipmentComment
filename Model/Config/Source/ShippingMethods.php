@@ -12,18 +12,20 @@ use Magento\Shipping\Model\Config as ShippingConfig;
 
 class ShippingMethods implements ArrayInterface
 {
-    /*
-    * Constructor
-    *
-    * @param ShippingConfig $shippingConfig
-    */
-    public function __construct(private ShippingConfig $shippingConfig) {}
+    /**
+     * Constructor
+     *
+     * @param ShippingConfig $shippingConfig
+     */
+    public function __construct(private ShippingConfig $shippingConfig)
+    {
+    }
 
-    /*
-    * Returns an array of shipping methods for use in configuration
-    *
-    * @return array
-    */
+    /**
+     * Returns an array of shipping methods for use in configuration
+     *
+     * @return array
+     */
     public function toOptionArray(): array
     {
         $options = [];
@@ -39,15 +41,15 @@ class ShippingMethods implements ArrayInterface
                     $value = $carrierCode . '_' . $methodCode;
                     $label = sprintf('%s — %s (%s)', $title, $methodTitle, $value);
                     $options[] = [
-                        'value' => $value, 
+                        'value' => $value,
                         'label' => $label
                     ];
                 }
             }
         }
 
-        usort($options, function ($a, $b) { 
-            return strcmp($a['label'], $b['label']); 
+        usort($options, function ($a, $b) {
+            return strcmp($a['label'], $b['label']);
         });
 
         return $options;

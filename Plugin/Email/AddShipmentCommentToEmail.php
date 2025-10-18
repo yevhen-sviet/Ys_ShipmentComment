@@ -17,16 +17,18 @@ class AddShipmentCommentToEmail
      *
      * @param Config $config
      */
-    public function __construct(private Config $config) {}
+    public function __construct(private Config $config)
+    {
+    }
 
-    /*
-    * After plugin for setTemplateVars method to add shipment comment to email template variables
-    *
-    * @param SenderBuilder $subject
-    * @param SenderBuilder $result
-    * @return SenderBuilder
-    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-    */
+    /**
+     * After plugin for setTemplateVars method to add shipment comment to email template variables
+     *
+     * @param SenderBuilder $subject
+     * @param SenderBuilder $result
+     * @return SenderBuilder
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function afterSetTemplateVars(SenderBuilder $subject, SenderBuilder $result)
     {
         if (!$this->config->isEnabled()) {

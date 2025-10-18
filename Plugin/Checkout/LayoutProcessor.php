@@ -16,16 +16,18 @@ class LayoutProcessor
      *
      * @param Helper $helper
      */
-    public function __construct(private Helper $helper) {}
+    public function __construct(private Helper $helper)
+    {
+    }
 
-    /*
-    * After plugin for process method to add shipment comment field to checkout layout
-    *
-    * @param \Magento\Checkout\Block\Checkout\LayoutProcessor $subject
-    * @param array $jsLayout
-    * @return array
-    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-    */
+    /**
+     * After plugin for process method to add shipment comment field to checkout layout
+     *
+     * @param \Magento\Checkout\Block\Checkout\LayoutProcessor $subject
+     * @param array $jsLayout
+     * @return array
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function afterProcess(
         \Magento\Checkout\Block\Checkout\LayoutProcessor $subject,
         array $jsLayout

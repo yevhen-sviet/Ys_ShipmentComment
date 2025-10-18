@@ -24,9 +24,10 @@ class ShippingInformationManagementPlugin
     public function __construct(
         private CartRepositoryInterface $quoteRepository,
         private Config $config
-    ) {}
+    ) {
+    }
 
-    /*
+    /**
      * Before plugin for saveAddressInformation method to handle shipment comment
      *
      * @param ShippingInformationManagement $subject
