@@ -13,8 +13,21 @@ use Ys\ShipmentComment\Helper\Data as Helper;
 
 class CopyCommentToOrder implements ObserverInterface
 {
-    public function __construct(private Helper $helper) {}
+    /**
+     * Constructor
+     *
+     * @param Helper $helper
+     */
+    public function __construct(private Helper $helper)
+    {
+    }
 
+    /**
+     * Executes the observer to copy shipment comment from quote to order
+     *
+     * @param Observer $observer
+     * @return void
+     */
     public function execute(Observer $observer): void
     {
         if (!$this->helper->isEnabled()) {
@@ -23,7 +36,9 @@ class CopyCommentToOrder implements ObserverInterface
 
         $quote = $observer->getEvent()->getQuote();
         $order = $observer->getEvent()->getOrder();
-        if (!$quote || !$order) return;
+        if (!$quote || !$order) {
+            return;
+        }
 
         $comment = (string)$quote->getData('shipment_comment');
         if ($comment !== '') {

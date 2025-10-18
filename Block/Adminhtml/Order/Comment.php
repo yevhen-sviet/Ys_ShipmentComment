@@ -13,6 +13,11 @@ use Magento\Sales\Api\Data\OrderInterface;
 
 class Comment extends Template
 {
+    /**
+     * Provides comment for admin order view
+     *
+     * @return string
+     */
     public function getComment(): string
     {
         $order = $this->getData('order');

@@ -15,11 +15,28 @@ use Ys\ShipmentComment\Model\Config;
 
 class ShippingInformationManagementPlugin
 {
+    /**
+     * Constructor
+     *
+     * @param CartRepositoryInterface $quoteRepository
+     * @param Config $config
+     */
     public function __construct(
         private CartRepositoryInterface $quoteRepository,
         private Config $config
-    ) {}
+    ) {
+    }
 
+    /**
+     * Before plugin for saveAddressInformation method to handle shipment comment
+     *
+     * @param ShippingInformationManagement $subject
+     * @param int $cartId
+     * @param ShippingInformationInterface $addressInformation
+     * @return array
+     * @throws InputException
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function beforeSaveAddressInformation(
         ShippingInformationManagement $subject,
         $cartId,

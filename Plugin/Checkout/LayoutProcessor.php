@@ -11,8 +11,23 @@ use Ys\ShipmentComment\Helper\Data as Helper;
 
 class LayoutProcessor
 {
-    public function __construct(private Helper $helper) {}
+    /**
+     * Constructor
+     *
+     * @param Helper $helper
+     */
+    public function __construct(private Helper $helper)
+    {
+    }
 
+    /**
+     * After plugin for process method to add shipment comment field to checkout layout
+     *
+     * @param \Magento\Checkout\Block\Checkout\LayoutProcessor $subject
+     * @param array $jsLayout
+     * @return array
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function afterProcess(
         \Magento\Checkout\Block\Checkout\LayoutProcessor $subject,
         array $jsLayout

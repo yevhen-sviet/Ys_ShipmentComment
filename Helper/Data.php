@@ -12,8 +12,20 @@ use Ys\ShipmentComment\Model\Config;
 
 class Data extends AbstractHelper
 {
-    public function __construct(private Config $config) {}
+    /**
+     * Constructor
+     *
+     * @param Config $config
+     */
+    public function __construct(private Config $config)
+    {
+    }
 
+    /**
+     * Checks if the shipment comment feature is enabled
+     *
+     * @return bool
+     */
     public function isEnabled(): bool
     {
         return $this->config->isEnabled();
