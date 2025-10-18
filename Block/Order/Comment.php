@@ -13,7 +13,13 @@ use Magento\Sales\Api\Data\OrderInterface;
 
 class Comment extends Template
 {
-    public function __construct(private Registry $registry) {}
+    public function __construct(
+        Template\Context $context,
+        private Registry $registry,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+    }
 
     /**
      * Returns the current order if available
