@@ -4,4 +4,8 @@
  */
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Ys_ShipmentComment', __DIR__);
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Ys_ShipmentComment',
+    __DIR__
+);

@@ -47,7 +47,6 @@ define([
             quote.shippingMethod.subscribe(sync);
 
             this.value.subscribe(function (val) {
-                // pass value to mixin-shared observable
                 if (setShippingInformationAction && typeof setShippingInformationAction.setShipmentComment === 'function') {
                     setShippingInformationAction.setShipmentComment(val);
                 }
@@ -56,13 +55,10 @@ define([
 
             var original = shippingSaveProcessor.saveShippingInformation;
             shippingSaveProcessor.saveShippingInformation = function () {
-                // Only enforce when visible & required
                 if (this.isVisible() && this.isRequired() && !this.validate()) {
                     var d = $.Deferred(); d.reject(); return d.promise();
                 }
 
-                // (Mixin already writes into payload.addressInformation.extension_attributes.shipment_comment)
-                // But we also keep the address extension attribute in sync for completeness:
                 var shippingAddress = quote.shippingAddress();
                 if (shippingAddress && this.isVisible()) {
                     shippingAddress['extension_attributes'] = shippingAddress['extension_attributes'] || {};
